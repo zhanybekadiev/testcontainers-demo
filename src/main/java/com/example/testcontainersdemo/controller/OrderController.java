@@ -1,4 +1,4 @@
-package com.example.testcontainersdemo.contoller;
+package com.example.testcontainersdemo.controller;
 
 import com.example.testcontainersdemo.config.TopicNames;
 import com.example.testcontainersdemo.model.ErrorResponse;
@@ -7,10 +7,7 @@ import com.example.testcontainersdemo.model.PageQuery;
 import com.example.testcontainersdemo.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.support.MessageSourceAccessor;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;

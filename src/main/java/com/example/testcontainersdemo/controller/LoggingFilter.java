@@ -1,4 +1,4 @@
-package com.example.testcontainersdemo.contoller;
+package com.example.testcontainersdemo.controller;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
