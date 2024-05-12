@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: testcontainers-demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: pgPass4local
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        generate_statistics: true
+        jdbc:
+          batch_size: 80
+        order_inserts: true
+        format_sql: true
+
+  kafka:
+    bootstrap-servers:
+      localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+kafka:
+  consumer:
+    max-attempts:
+      5
+    interval: # ms
+      5000
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+#    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+#    org.apache.kafka: DEBUG
+#    org.springframework.kafka: DEBUG
